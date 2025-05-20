@@ -1,0 +1,631 @@
+<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Tue May 20 2025 12:55:11 GMT+0000 (Coordinated Universal Time)  -->
+<html data-wf-page="675c343e407164d0fd9a6b3a" data-wf-site="675c343d407164d0fd9a6ad1">
+<head>
+  <meta charset="utf-8">
+  <title>Latchline</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/latchline.webflow.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+  <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
+  <link href="images/webclip.png" rel="apple-touch-icon">
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="global-styles w-embed">
+      <style>
+/* Make text look crisper and more legible in all browsers */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+/* Focus state style for keyboard navigation for the focusable elements */
+*[tabindex]:focus-visible,
+  input[type="file"]:focus-visible {
+   outline: 0.125rem solid #4d65ff;
+   outline-offset: 0.125rem;
+}
+/* Set color style to inherit */
+.inherit-color * {
+    color: inherit;
+}
+/* Get rid of top margin on first element in any rich text element */
+.w-richtext > :not(div):first-child, .w-richtext > div:first-child > :first-child {
+  margin-top: 0 !important;
+}
+/* Get rid of bottom margin on last element in any rich text element */
+.w-richtext>:last-child, .w-richtext ol li:last-child, .w-richtext ul li:last-child {
+	margin-bottom: 0 !important;
+}
+/* Make sure containers never lose their center alignment */
+.container-medium,.container-small, .container-large {
+	margin-right: auto !important;
+  margin-left: auto !important;
+}
+/* 
+Make the following elements inherit typography styles from the parent and not have hardcoded values. 
+Important: You will not be able to style for example "All Links" in Designer with this CSS applied.
+Uncomment this CSS to use it in the project. Leave this message for future hand-off.
+*/
+/*
+a,
+.w-input,
+.w-select,
+.w-tab-link,
+.w-nav-link,
+.w-dropdown-btn,
+.w-dropdown-toggle,
+.w-dropdown-link {
+  color: inherit;
+  text-decoration: inherit;
+  font-size: inherit;
+}
+*/
+/* Apply "..." after 3 lines of text */
+.text-style-3lines {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+/* Apply "..." after 2 lines of text */
+.text-style-2lines {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+/* These classes are never overwritten */
+.hide {
+  display: none !important;
+}
+@media screen and (max-width: 991px) {
+    .hide, .hide-tablet {
+        display: none !important;
+    }
+}
+  @media screen and (max-width: 767px) {
+    .hide-mobile-landscape{
+      display: none !important;
+    }
+}
+  @media screen and (max-width: 479px) {
+    .hide-mobile{
+      display: none !important;
+    }
+}
+.margin-0 {
+  margin: 0rem !important;
+}
+.padding-0 {
+  padding: 0rem !important;
+}
+.spacing-clean {
+padding: 0rem !important;
+margin: 0rem !important;
+}
+.margin-top {
+  margin-right: 0rem !important;
+  margin-bottom: 0rem !important;
+  margin-left: 0rem !important;
+}
+.padding-top {
+  padding-right: 0rem !important;
+  padding-bottom: 0rem !important;
+  padding-left: 0rem !important;
+}
+.margin-right {
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+  margin-left: 0rem !important;
+}
+.padding-right {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+  padding-left: 0rem !important;
+}
+.margin-bottom {
+  margin-top: 0rem !important;
+  margin-right: 0rem !important;
+  margin-left: 0rem !important;
+}
+.padding-bottom {
+  padding-top: 0rem !important;
+  padding-right: 0rem !important;
+  padding-left: 0rem !important;
+}
+.margin-left {
+  margin-top: 0rem !important;
+  margin-right: 0rem !important;
+  margin-bottom: 0rem !important;
+}
+.padding-left {
+  padding-top: 0rem !important;
+  padding-right: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+.margin-horizontal {
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+}
+.padding-horizontal {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+.margin-vertical {
+  margin-right: 0rem !important;
+  margin-left: 0rem !important;
+}
+.padding-vertical {
+  padding-right: 0rem !important;
+  padding-left: 0rem !important;
+}
+  html { font-size: calc(0.625rem + 0.41666666666666663vw); }
+  @media screen and (max-width:1920px) { html { font-size: calc(0.625rem + 0.41666666666666674vw); } }
+  @media screen and (max-width:1440px) { html { font-size: calc(0.8126951092611863rem + 0.20811654526534862vw); } }
+  @media screen and (max-width:479px) { html { font-size: calc(0.7494769874476988rem + 0.8368200836820083vw); } }
+</style>
+    </div>
+    <div class="nav_fixed">
+      <div data-animation="default" class="navbar1_component w-nav" data-easing2="ease" fs-scrolldisable-element="smart-nav" data-easing="ease" data-collapse="none" data-w-id="8bfc04b3-e071-bb41-86ae-ddb654ec8bd5" role="banner" data-duration="400">
+        <div class="navbar1_container">
+          <a href="index.html" aria-current="page" class="navbar1_logo-link w-nav-brand w--current">
+            <div class="navbar1_logo w-embed"><svg width="100%" height="100%" viewbox="0 0 178 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.13843 9.59766H1.06616V27.8086H6.13843V9.59766Z" fill="currentColor"></path>
+                <path d="M9.75464 13.6719C9.75464 11.2588 11.9695 9.36523 14.3552 9.36523C15.0628 9.38324 15.7594 9.54529 16.4023 9.84147C17.0452 10.1377 17.621 10.5618 18.0945 11.0879L30.4744 22.9824V9.57031H35.0955V22.9824C35.0955 25.8877 32.9558 28 30.4744 28C29.1072 28 28.2322 27.4805 25.45 25.0469L14.3552 14.2188V27.8018H9.75464V13.6719Z" fill="currentColor"></path>
+                <path d="M42.7039 9.61816L49.9636 23.2422L57.3738 9.61816H62.5896L55.0701 23.7207C53.8191 26.0791 52.6091 27.9795 49.9294 27.9795C47.3728 27.9795 45.9441 26.0107 44.7615 23.7207L37.4128 9.61816H42.7039Z" fill="currentColor"></path>
+                <path d="M90.4666 9.57031V14.2393H70.8064C69.822 14.2393 69.699 14.9775 69.699 15.7705V16.4062H90.4666V21.1094H69.7263V21.5264C69.7263 22.4082 69.8494 23.0713 70.8064 23.0713H90.4666V27.8564H70.8064C67.3406 27.8564 64.9754 25.5664 64.9754 22.0732V15.4287C64.9652 14.6611 65.1092 13.8993 65.3989 13.1884C65.6886 12.4775 66.1181 11.8319 66.6618 11.2901C67.2056 10.7482 67.8527 10.321 68.5646 10.0338C69.2765 9.74663 70.0388 9.60529 70.8064 9.61816L90.4666 9.57031Z" fill="currentColor"></path>
+                <path d="M93.9392 13.6719C93.9392 11.2588 96.1541 9.36523 98.5398 9.36523C99.2486 9.38232 99.9464 9.54392 100.591 9.84013C101.235 10.1363 101.812 10.5609 102.286 11.0879L114.659 22.9961V9.57031H119.287V22.9824C119.322 23.6193 119.229 24.2567 119.014 24.8573C118.799 25.4578 118.466 26.0093 118.035 26.4793C117.604 26.9493 117.083 27.3284 116.503 27.5942C115.924 27.8601 115.296 28.0073 114.659 28.0273C113.292 28.0273 112.424 27.5078 109.641 25.0742L98.5466 14.2187V27.8018H93.9461L93.9392 13.6719Z" fill="currentColor"></path>
+                <path d="M122.855 9.61816H148.668V14.2734H138.086V27.8018H133.512V14.3213H122.855V9.61816Z" fill="currentColor"></path>
+                <path d="M151.922 9.64551H157.903L162.688 15.1143C163.105 15.6064 164.384 16.8848 164.63 17.7461V19.8242C164.384 20.665 163.105 21.8203 162.688 22.3125L157.903 27.8223H151.922L159.674 18.792L151.922 9.64551ZM177.338 27.8018H171.363L166.578 22.292C166.161 21.7998 164.883 20.6445 164.636 19.8037V17.7119C164.883 16.8506 166.161 15.5723 166.578 15.0801L171.363 9.64551H177.338L169.586 18.7715L177.338 27.8018Z" fill="#ED4023"></path>
+                <path d="M7.13648 3.51367C7.13648 4.20861 6.9304 4.88794 6.54432 5.46576C6.15823 6.04358 5.60947 6.49394 4.96743 6.75988C4.32539 7.02582 3.61891 7.09541 2.93732 6.95983C2.25574 6.82425 1.62966 6.48961 1.13826 5.99821C0.646867 5.50682 0.312222 4.88074 0.176647 4.19916C0.0410708 3.51757 0.110653 2.81109 0.376595 2.16905C0.642536 1.52701 1.09289 0.978248 1.67071 0.59216C2.24853 0.206073 2.92787 0 3.6228 0C4.55469 0 5.4484 0.370189 6.10735 1.02913C6.76629 1.68807 7.13648 2.58179 7.13648 3.51367Z" fill="#ED4023"></path>
+              </svg></div>
+          </a>
+          <nav role="navigation" class="navbar1_menu w-nav-menu">
+            <div class="navbar1_menu-buttons">
+              <a href="https://www.kickstarter.com/projects/1867636688/latchline-reinventing-sliding-door-closers" target="_blank" class="button is-nav w-inline-block">
+                <div>View on Kickstarter</div>
+              </a>
+            </div>
+          </nav>
+          <div class="navbar1_menu-button w-nav-button">
+            <div class="menu-icon1">
+              <div class="menu-icon1_line-top"></div>
+              <div class="menu-icon1_line-middle">
+                <div class="menu-icon1_line-middle-inner"></div>
+              </div>
+              <div class="menu-icon1_line-bottom"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main class="main-wrapper">
+      <div data-poster-url="videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-poster-00001.jpg" data-video-urls="videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-transcode.mp4,videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="section_hero w-background-video w-background-video-atom"><video id="9f7be892-5b13-4615-ef4e-0c0ad69ab4de-video" autoplay="" loop="" style="background-image:url(&quot;videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+          <source src="videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-transcode.mp4" data-wf-ignore="true">
+          <source src="videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-transcode.webm" data-wf-ignore="true">
+        </video><img src="images/19603217_1.avif" loading="lazy" sizes="(max-width: 2000px) 100vw, 2000px" srcset="images/19603217_119603217.avif 500w, images/19603217_119603217.avif 800w, images/19603217_119603217.avif 1080w, images/19603217_1.avif 2000w" alt="" class="hero_background-image">
+        <div class="hero_overlay"></div>
+        <div class="padding-global z-index-2">
+          <div class="container-xlarge">
+            <div class="hero_content">
+              <div class="max-width-large">
+                <h1 class="heading-style-h1">Reliable Screen Door Closing, Made Simple</h1>
+                <div class="spacer-medium"></div>
+                <div class="text-size-large">Keep Your Screen Door Secure with Ease</div>
+                <div class="spacer-small"></div>
+                <div class="text-size-medium text-style-muted">Latchline is a compact sliding screen door closer that ensures your door closes smoothly and safely. Its neo-magnet braking technology prevents slamming, keeping your space secure.</div>
+              </div>
+              <div class="button-group">
+                <a href="https://www.kickstarter.com/projects/1867636688/latchline-reinventing-sliding-door-closers" target="_blank" class="button w-inline-block">
+                  <div>View on Kickstarter</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div><noscript>
+          <style>
+  [data-wf-bgvideo-fallback-img] {
+    display: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-wf-bgvideo-fallback-img] {
+      position: absolute;
+      z-index: -100;
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }</style><img data-wf-bgvideo-fallback-img="true" src="videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-poster-00001.jpg" alt="">
+        </noscript>
+        <div aria-live="polite"><button type="button" data-w-bg-video-control="true" aria-controls="9f7be892-5b13-4615-ef4e-0c0ad69ab4de-video" class="w-backgroundvideo-backgroundvideoplaypausebutton hide w-background-video--control"><span><img src="https://uploads-ssl.webflow.com/6022af993a6b2191db3ed10c/628299f8aa233b83918e24fd_Pause.svg" loading="lazy" alt="Pause video"></span><span hidden=""><img loading="lazy" alt="Play video" src="https://uploads-ssl.webflow.com/6022af993a6b2191db3ed10c/628298b20ae0236682d4b87f_Play-24.svg"></span></button></div>
+      </div>
+      <footer data-w-id="92f54b80-6359-0863-01a9-7ca57c70adf8" class="section_video">
+        <div class="padding-global">
+          <div class="container-xlarge">
+            <div class="footer_component">
+              <div class="footer_title">
+                <h2 class="heading-style-h2">Join the Conversation. Find us on Instagram.</h2>
+                <div class="button-group">
+                  <a href="https://www.instagram.com/inventx.official" target="_blank" class="button w-inline-block">
+                    <div>@inventx.official</div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer_loop">
+          <div class="footer_loop-mover">
+            <div class="footer_loop-group">
+              <div class="footer_loop-image-wrapper">
+                <div data-poster-url="videos/20240818_TRIGO_Latchline_Product_Grant_v23-poster-00001.jpg" data-video-urls="videos/20240818_TRIGO_Latchline_Product_Grant_v23-transcode.mp4,videos/20240818_TRIGO_Latchline_Product_Grant_v23-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="video_video w-background-video w-background-video-atom"><video id="8e28bdc8-b4cb-b357-0693-48e427ae07fa-video" autoplay="" loop="" style="background-image:url(&quot;videos/20240818_TRIGO_Latchline_Product_Grant_v23-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+                    <source src="videos/20240818_TRIGO_Latchline_Product_Grant_v23-transcode.mp4" data-wf-ignore="true">
+                    <source src="videos/20240818_TRIGO_Latchline_Product_Grant_v23-transcode.webm" data-wf-ignore="true">
+                  </video></div>
+              </div>
+              <div class="footer_loop-image-wrapper">
+                <div data-poster-url="videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-poster-00001.jpg" data-video-urls="videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-transcode.mp4,videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="video_video w-background-video w-background-video-atom"><video id="10cd7cd9-ec1d-fc05-a909-c093f3b60e10-video" autoplay="" loop="" style="background-image:url(&quot;videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+                    <source src="videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-transcode.mp4" data-wf-ignore="true">
+                    <source src="videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-transcode.webm" data-wf-ignore="true">
+                  </video></div>
+              </div>
+              <div class="footer_loop-image-wrapper">
+                <div data-poster-url="videos/20240818_TRIGO_Latchline_Product_Grant_v23-poster-00001.jpg" data-video-urls="videos/20240818_TRIGO_Latchline_Product_Grant_v23-transcode.mp4,videos/20240818_TRIGO_Latchline_Product_Grant_v23-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="video_video w-background-video w-background-video-atom"><video id="15d2f6fe-292b-6c73-a7f5-dff5682423a6-video" autoplay="" loop="" style="background-image:url(&quot;videos/20240818_TRIGO_Latchline_Product_Grant_v23-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+                    <source src="videos/20240818_TRIGO_Latchline_Product_Grant_v23-transcode.mp4" data-wf-ignore="true">
+                    <source src="videos/20240818_TRIGO_Latchline_Product_Grant_v23-transcode.webm" data-wf-ignore="true">
+                  </video></div>
+              </div>
+              <div class="footer_loop-image-wrapper">
+                <div data-poster-url="videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-poster-00001.jpg" data-video-urls="videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-transcode.mp4,videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="video_video w-background-video w-background-video-atom"><video id="073ee74f-f528-8715-94a7-a33d1c2e0189-video" autoplay="" loop="" style="background-image:url(&quot;videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+                    <source src="videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-transcode.mp4" data-wf-ignore="true">
+                    <source src="videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-transcode.webm" data-wf-ignore="true">
+                  </video></div>
+              </div>
+            </div>
+            <div class="footer_loop-group">
+              <div class="footer_loop-image-wrapper">
+                <div data-poster-url="videos/20240818_TRIGO_Latchline_Product_Grant_v23-poster-00001.jpg" data-video-urls="videos/20240818_TRIGO_Latchline_Product_Grant_v23-transcode.mp4,videos/20240818_TRIGO_Latchline_Product_Grant_v23-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="video_video w-background-video w-background-video-atom"><video id="615b70c5-1eb7-5436-e5d4-9fd016380c05-video" autoplay="" loop="" style="background-image:url(&quot;videos/20240818_TRIGO_Latchline_Product_Grant_v23-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+                    <source src="videos/20240818_TRIGO_Latchline_Product_Grant_v23-transcode.mp4" data-wf-ignore="true">
+                    <source src="videos/20240818_TRIGO_Latchline_Product_Grant_v23-transcode.webm" data-wf-ignore="true">
+                  </video></div>
+              </div>
+              <div class="footer_loop-image-wrapper">
+                <div data-poster-url="videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-poster-00001.jpg" data-video-urls="videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-transcode.mp4,videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="video_video w-background-video w-background-video-atom"><video id="615b70c5-1eb7-5436-e5d4-9fd016380c07-video" autoplay="" loop="" style="background-image:url(&quot;videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+                    <source src="videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-transcode.mp4" data-wf-ignore="true">
+                    <source src="videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-transcode.webm" data-wf-ignore="true">
+                  </video></div>
+              </div>
+              <div class="footer_loop-image-wrapper">
+                <div data-poster-url="videos/20240818_TRIGO_Latchline_Product_Grant_v23-poster-00001.jpg" data-video-urls="videos/20240818_TRIGO_Latchline_Product_Grant_v23-transcode.mp4,videos/20240818_TRIGO_Latchline_Product_Grant_v23-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="video_video w-background-video w-background-video-atom"><video id="615b70c5-1eb7-5436-e5d4-9fd016380c09-video" autoplay="" loop="" style="background-image:url(&quot;videos/20240818_TRIGO_Latchline_Product_Grant_v23-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+                    <source src="videos/20240818_TRIGO_Latchline_Product_Grant_v23-transcode.mp4" data-wf-ignore="true">
+                    <source src="videos/20240818_TRIGO_Latchline_Product_Grant_v23-transcode.webm" data-wf-ignore="true">
+                  </video></div>
+              </div>
+              <div class="footer_loop-image-wrapper">
+                <div data-poster-url="videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-poster-00001.jpg" data-video-urls="videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-transcode.mp4,videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="video_video w-background-video w-background-video-atom"><video id="615b70c5-1eb7-5436-e5d4-9fd016380c0b-video" autoplay="" loop="" style="background-image:url(&quot;videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+                    <source src="videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-transcode.mp4" data-wf-ignore="true">
+                    <source src="videos/20240415_TRIGO_Latchline_Product_RoughCut_Grant_v11-transcode.webm" data-wf-ignore="true">
+                  </video></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="padding-global">
+          <div class="container-xlarge"></div>
+        </div>
+      </footer>
+      <section class="section_feature">
+        <div class="padding-global">
+          <div class="container-xlarge">
+            <div class="feature_component">
+              <div class="feature_left-content">
+                <div class="feature_top-content"><img src="images/Latchline-logo-single-line-logo-240524-1.svg" loading="lazy" alt="" class="feature_logo invert">
+                  <div class="feature_title">
+                    <h2 class="heading-style-h2">Multi-Function Sliding Screen Door Closer</h2>
+                    <div class="spacer-medium"></div>
+                    <div class="text-style-muted text-size-medium">Designed to keep out pests while ensuring soft, hands-free closing, Latchline is a value-for-money compact door closer built for durability and convenience.</div>
+                    <div class="spacer-medium"></div>
+                    <div class="features_group">
+                      <div class="feature_subtitle">
+                        <div class="feature_subtitle-circle"></div>
+                        <div>Neo-Magnet Braking Technology – Ensures a safe and controlled close every time</div>
+                      </div>
+                      <div class="feature_subtitle">
+                        <div class="feature_subtitle-circle"></div>
+                        <div>Speed Controller – Adjust the door closing speed to your preference</div>
+                      </div>
+                      <div class="feature_subtitle">
+                        <div class="feature_subtitle-circle"></div>
+                        <div>Easy Hold-Open Function – Push-button hold with built-in release</div>
+                      </div>
+                      <div class="feature_subtitle">
+                        <div class="feature_subtitle-circle"></div>
+                        <div>Compact &amp; Universal Fit – Works with screen doors up to 5 feet wide</div>
+                      </div>
+                      <div class="feature_subtitle">
+                        <div class="feature_subtitle-circle"></div>
+                        <div>Quick &amp; Simple Installation – Includes fixing template, screws, and safety weight</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="button-group">
+                  <a href="https://www.kickstarter.com/projects/1867636688/latchline-reinventing-sliding-door-closers" target="_blank" class="button w-inline-block">
+                    <div>View on Kickstarter</div>
+                  </a>
+                </div>
+              </div>
+              <div class="feature_image-wrapper"><img src="images/Group-2-2_1.avif" loading="lazy" alt="" class="feature_image"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section_loop">
+        <div class="loop_container">
+          <div class="loop_mover">
+            <div class="loop_group">
+              <div class="loop_text">Adjustable Closing Speed</div>
+              <div class="loop_icon w-embed"><svg width="100%" height="100%" viewbox="0 0 79 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M78.4608 0.775635H0.012085V79.2244H78.4608V0.775635Z" fill="black"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M42.0382 0.775635H36.4347V25.5863L27.1405 2.58224L21.945 4.68134L31.48 28.2813L13.4818 10.283L9.51952 14.2453L26.77 31.4958L4.41467 21.7285L2.17123 26.8633L25.8258 37.1982H0.012085V42.8018H25.8258L2.17123 53.1366L4.41467 58.2715L26.77 48.5042L9.51952 65.7547L13.4818 69.7168L31.48 51.7187L21.945 75.3188L27.1405 77.4177L36.4347 54.4138V79.2244H42.0382V54.4138L51.3325 77.4177L56.5277 75.3188L46.9931 51.7187L64.9912 69.7168L68.9532 65.7547L51.7027 48.5042L74.0583 58.2715L76.3015 53.1366L52.6473 42.8018H78.4608V37.1982H52.6469L76.3015 26.8633L74.0583 21.7285L51.7027 31.4958L68.9532 14.2453L64.9912 10.283L46.9931 28.2813L56.5277 4.68134L51.3325 2.58224L42.0382 25.5863V0.775635Z" fill="currentcolor"></path>
+                </svg></div>
+              <div class="loop_text">Adjustable Closing Speed</div>
+              <div class="loop_icon w-embed"><svg width="100%" height="100%" viewbox="0 0 79 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M78.4608 0.775635H0.012085V79.2244H78.4608V0.775635Z" fill="black"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M42.0382 0.775635H36.4347V25.5863L27.1405 2.58224L21.945 4.68134L31.48 28.2813L13.4818 10.283L9.51952 14.2453L26.77 31.4958L4.41467 21.7285L2.17123 26.8633L25.8258 37.1982H0.012085V42.8018H25.8258L2.17123 53.1366L4.41467 58.2715L26.77 48.5042L9.51952 65.7547L13.4818 69.7168L31.48 51.7187L21.945 75.3188L27.1405 77.4177L36.4347 54.4138V79.2244H42.0382V54.4138L51.3325 77.4177L56.5277 75.3188L46.9931 51.7187L64.9912 69.7168L68.9532 65.7547L51.7027 48.5042L74.0583 58.2715L76.3015 53.1366L52.6473 42.8018H78.4608V37.1982H52.6469L76.3015 26.8633L74.0583 21.7285L51.7027 31.4958L68.9532 14.2453L64.9912 10.283L46.9931 28.2813L56.5277 4.68134L51.3325 2.58224L42.0382 25.5863V0.775635Z" fill="currentcolor"></path>
+                </svg></div>
+            </div>
+            <div class="loop_group">
+              <div class="loop_text">Adjustable Closing Speed</div>
+              <div class="loop_icon w-embed"><svg width="100%" height="100%" viewbox="0 0 79 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M78.4608 0.775635H0.012085V79.2244H78.4608V0.775635Z" fill="black"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M42.0382 0.775635H36.4347V25.5863L27.1405 2.58224L21.945 4.68134L31.48 28.2813L13.4818 10.283L9.51952 14.2453L26.77 31.4958L4.41467 21.7285L2.17123 26.8633L25.8258 37.1982H0.012085V42.8018H25.8258L2.17123 53.1366L4.41467 58.2715L26.77 48.5042L9.51952 65.7547L13.4818 69.7168L31.48 51.7187L21.945 75.3188L27.1405 77.4177L36.4347 54.4138V79.2244H42.0382V54.4138L51.3325 77.4177L56.5277 75.3188L46.9931 51.7187L64.9912 69.7168L68.9532 65.7547L51.7027 48.5042L74.0583 58.2715L76.3015 53.1366L52.6473 42.8018H78.4608V37.1982H52.6469L76.3015 26.8633L74.0583 21.7285L51.7027 31.4958L68.9532 14.2453L64.9912 10.283L46.9931 28.2813L56.5277 4.68134L51.3325 2.58224L42.0382 25.5863V0.775635Z" fill="currentcolor"></path>
+                </svg></div>
+              <div class="loop_text">Adjustable Closing Speed</div>
+              <div class="loop_icon w-embed"><svg width="100%" height="100%" viewbox="0 0 79 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M78.4608 0.775635H0.012085V79.2244H78.4608V0.775635Z" fill="black"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M42.0382 0.775635H36.4347V25.5863L27.1405 2.58224L21.945 4.68134L31.48 28.2813L13.4818 10.283L9.51952 14.2453L26.77 31.4958L4.41467 21.7285L2.17123 26.8633L25.8258 37.1982H0.012085V42.8018H25.8258L2.17123 53.1366L4.41467 58.2715L26.77 48.5042L9.51952 65.7547L13.4818 69.7168L31.48 51.7187L21.945 75.3188L27.1405 77.4177L36.4347 54.4138V79.2244H42.0382V54.4138L51.3325 77.4177L56.5277 75.3188L46.9931 51.7187L64.9912 69.7168L68.9532 65.7547L51.7027 48.5042L74.0583 58.2715L76.3015 53.1366L52.6473 42.8018H78.4608V37.1982H52.6469L76.3015 26.8633L74.0583 21.7285L51.7027 31.4958L68.9532 14.2453L64.9912 10.283L46.9931 28.2813L56.5277 4.68134L51.3325 2.58224L42.0382 25.5863V0.775635Z" fill="currentcolor"></path>
+                </svg></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section_feature2">
+        <div class="padding-global">
+          <div class="container-xlarge">
+            <div class="feature2_component"><img src="images/Group-2-22_1.avif" loading="lazy" alt="" class="feature2_image">
+              <div class="feature2_content">
+                <h2 class="heading-style-h2">Precision Engineering. Ultimate Convenience.</h2>
+                <div class="max-width-large">
+                  <div class="feature_subtitle is-center">
+                    <div class="feature_subtitle-circle no-margin"></div>
+                    <div class="text-size-large">Effortless Closing Every Time</div>
+                  </div>
+                  <div class="spacer-small"></div>
+                  <div class="text-size-large text-style-muted">Latchline automatically closes your sliding screen door with adjustable speed control, letting you set the perfect closing pace. The push-button hold-open function allows for easy access, while the built-in release mechanism ensures effortless operation when needed.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section_loop">
+        <div class="loop_container">
+          <div class="loop_mover">
+            <div class="loop_group">
+              <div class="loop_text">Easy DIY Installation</div>
+              <div class="loop_icon w-embed"><svg width="100%" height="100%" viewbox="0 0 79 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M78.4608 0.775635H0.012085V79.2244H78.4608V0.775635Z" fill="black"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M42.0382 0.775635H36.4347V25.5863L27.1405 2.58224L21.945 4.68134L31.48 28.2813L13.4818 10.283L9.51952 14.2453L26.77 31.4958L4.41467 21.7285L2.17123 26.8633L25.8258 37.1982H0.012085V42.8018H25.8258L2.17123 53.1366L4.41467 58.2715L26.77 48.5042L9.51952 65.7547L13.4818 69.7168L31.48 51.7187L21.945 75.3188L27.1405 77.4177L36.4347 54.4138V79.2244H42.0382V54.4138L51.3325 77.4177L56.5277 75.3188L46.9931 51.7187L64.9912 69.7168L68.9532 65.7547L51.7027 48.5042L74.0583 58.2715L76.3015 53.1366L52.6473 42.8018H78.4608V37.1982H52.6469L76.3015 26.8633L74.0583 21.7285L51.7027 31.4958L68.9532 14.2453L64.9912 10.283L46.9931 28.2813L56.5277 4.68134L51.3325 2.58224L42.0382 25.5863V0.775635Z" fill="currentcolor"></path>
+                </svg></div>
+              <div class="loop_text">Easy DIY Installation</div>
+              <div class="loop_icon w-embed"><svg width="100%" height="100%" viewbox="0 0 79 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M78.4608 0.775635H0.012085V79.2244H78.4608V0.775635Z" fill="black"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M42.0382 0.775635H36.4347V25.5863L27.1405 2.58224L21.945 4.68134L31.48 28.2813L13.4818 10.283L9.51952 14.2453L26.77 31.4958L4.41467 21.7285L2.17123 26.8633L25.8258 37.1982H0.012085V42.8018H25.8258L2.17123 53.1366L4.41467 58.2715L26.77 48.5042L9.51952 65.7547L13.4818 69.7168L31.48 51.7187L21.945 75.3188L27.1405 77.4177L36.4347 54.4138V79.2244H42.0382V54.4138L51.3325 77.4177L56.5277 75.3188L46.9931 51.7187L64.9912 69.7168L68.9532 65.7547L51.7027 48.5042L74.0583 58.2715L76.3015 53.1366L52.6473 42.8018H78.4608V37.1982H52.6469L76.3015 26.8633L74.0583 21.7285L51.7027 31.4958L68.9532 14.2453L64.9912 10.283L46.9931 28.2813L56.5277 4.68134L51.3325 2.58224L42.0382 25.5863V0.775635Z" fill="currentcolor"></path>
+                </svg></div>
+            </div>
+            <div class="loop_group">
+              <div class="loop_text">Easy DIY Installation</div>
+              <div class="loop_icon w-embed"><svg width="100%" height="100%" viewbox="0 0 79 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M78.4608 0.775635H0.012085V79.2244H78.4608V0.775635Z" fill="black"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M42.0382 0.775635H36.4347V25.5863L27.1405 2.58224L21.945 4.68134L31.48 28.2813L13.4818 10.283L9.51952 14.2453L26.77 31.4958L4.41467 21.7285L2.17123 26.8633L25.8258 37.1982H0.012085V42.8018H25.8258L2.17123 53.1366L4.41467 58.2715L26.77 48.5042L9.51952 65.7547L13.4818 69.7168L31.48 51.7187L21.945 75.3188L27.1405 77.4177L36.4347 54.4138V79.2244H42.0382V54.4138L51.3325 77.4177L56.5277 75.3188L46.9931 51.7187L64.9912 69.7168L68.9532 65.7547L51.7027 48.5042L74.0583 58.2715L76.3015 53.1366L52.6473 42.8018H78.4608V37.1982H52.6469L76.3015 26.8633L74.0583 21.7285L51.7027 31.4958L68.9532 14.2453L64.9912 10.283L46.9931 28.2813L56.5277 4.68134L51.3325 2.58224L42.0382 25.5863V0.775635Z" fill="currentcolor"></path>
+                </svg></div>
+              <div class="loop_text">Easy DIY Installation</div>
+              <div class="loop_icon w-embed"><svg width="100%" height="100%" viewbox="0 0 79 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M78.4608 0.775635H0.012085V79.2244H78.4608V0.775635Z" fill="black"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M42.0382 0.775635H36.4347V25.5863L27.1405 2.58224L21.945 4.68134L31.48 28.2813L13.4818 10.283L9.51952 14.2453L26.77 31.4958L4.41467 21.7285L2.17123 26.8633L25.8258 37.1982H0.012085V42.8018H25.8258L2.17123 53.1366L4.41467 58.2715L26.77 48.5042L9.51952 65.7547L13.4818 69.7168L31.48 51.7187L21.945 75.3188L27.1405 77.4177L36.4347 54.4138V79.2244H42.0382V54.4138L51.3325 77.4177L56.5277 75.3188L46.9931 51.7187L64.9912 69.7168L68.9532 65.7547L51.7027 48.5042L74.0583 58.2715L76.3015 53.1366L52.6473 42.8018H78.4608V37.1982H52.6469L76.3015 26.8633L74.0583 21.7285L51.7027 31.4958L68.9532 14.2453L64.9912 10.283L46.9931 28.2813L56.5277 4.68134L51.3325 2.58224L42.0382 25.5863V0.775635Z" fill="currentcolor"></path>
+                </svg></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section_tab">
+        <div class="padding-global">
+          <div class="container-xlarge">
+            <div class="tab_component">
+              <div data-current="Tab 1" data-easing="ease" data-duration-in="300" data-duration-out="100" class="tab_tabs w-tabs">
+                <div class="tab_tabs-menu w-tab-menu">
+                  <a data-w-tab="Tab 1" class="tab_tabs-link w-inline-block w-tab-link w--current">
+                    <div>Space-Saving &amp; Efficient</div>
+                    <div class="tab_tabs-icon w-embed"><svg width="100%" height="100%" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.5" y="0.5" width="31" height="31" rx="15.5" stroke="currentColor"></rect>
+                        <line x1="8" y1="15.5" x2="24" y2="15.5" stroke="currentColor"></line>
+                        <line x1="16.5" y1="8" x2="16.5" y2="24" stroke="currentColor"></line>
+                      </svg></div>
+                  </a>
+                  <a data-w-tab="Tab 2" class="tab_tabs-link w-inline-block w-tab-link">
+                    <div>Customizable Closing Speed</div>
+                    <div class="tab_tabs-icon w-embed"><svg width="100%" height="100%" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.5" y="0.5" width="31" height="31" rx="15.5" stroke="currentColor"></rect>
+                        <line x1="8" y1="15.5" x2="24" y2="15.5" stroke="currentColor"></line>
+                        <line x1="16.5" y1="8" x2="16.5" y2="24" stroke="currentColor"></line>
+                      </svg></div>
+                  </a>
+                  <a data-w-tab="Tab 3" class="tab_tabs-link w-inline-block w-tab-link">
+                    <div>Durable &amp; Reliable</div>
+                    <div class="tab_tabs-icon w-embed"><svg width="100%" height="100%" viewbox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.5" y="0.5" width="31" height="31" rx="15.5" stroke="currentColor"></rect>
+                        <line x1="8" y1="15.5" x2="24" y2="15.5" stroke="currentColor"></line>
+                        <line x1="16.5" y1="8" x2="16.5" y2="24" stroke="currentColor"></line>
+                      </svg></div>
+                  </a>
+                </div>
+                <div class="tab_tabs-content w-tab-content">
+                  <div data-w-tab="Tab 1" class="tab_tabs-pane w-tab-pane w--tab-active">
+                    <div class="tab_tabs-pane-content">
+                      <div class="tab_image-wrapper"><img src="images/Group-2-22_1.avif" loading="lazy" alt="" class="tab_image"></div>
+                      <div class="text-size-large">Latchline’s compact design fits most sliding screen doors, providing a gentle and dependable close without occupying extra space.</div>
+                    </div>
+                  </div>
+                  <div data-w-tab="Tab 2" class="tab_tabs-pane w-tab-pane">
+                    <div class="tab_tabs-pane-content">
+                      <div class="tab_image-wrapper"><img src="images/Group-2-22_1.avif" loading="lazy" alt="" class="tab_image"></div>
+                      <div class="text-size-large">Adjust the door’s closing speed to your preference, ensuring comfort and convenience with Latchline.</div>
+                    </div>
+                  </div>
+                  <div data-w-tab="Tab 3" class="tab_tabs-pane w-tab-pane">
+                    <div class="tab_tabs-pane-content">
+                      <div class="tab_image-wrapper"><img src="images/Group-2-22_1.avif" loading="lazy" alt="" class="tab_image"></div>
+                      <div class="text-size-large">Crafted from durable materials, Latchline ensures consistent daily performance, keeping your screen door securely closed.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section_loop2">
+        <div class="loop_container">
+          <div class="loop_mover">
+            <div class="loop_group">
+              <div class="loop_text">Be the first</div>
+              <div id="w-node-_86496976-f37d-a03c-0cbd-46b48de44e49-fd9a6b3a" class="loop_button">
+                <a href="https://www.kickstarter.com/projects/1867636688/latchline-reinventing-sliding-door-closers" target="_blank" class="button is-big w-inline-block">
+                  <div>View on Kickstarter</div>
+                </a>
+              </div>
+              <div class="loop_text">Be the first</div>
+              <div id="w-node-_8a7b71b8-935a-1472-9989-dd1d880d4cb1-fd9a6b3a" class="loop_button">
+                <a href="https://www.kickstarter.com/projects/1867636688/latchline-reinventing-sliding-door-closers" target="_blank" class="button is-big w-inline-block">
+                  <div>View on Kickstarter</div>
+                </a>
+              </div>
+              <div class="loop_text">Be the first</div>
+              <div id="w-node-_8530019f-97e7-ce39-1de9-6a94b5f4b928-fd9a6b3a" class="loop_button">
+                <a href="https://www.kickstarter.com/projects/1867636688/latchline-reinventing-sliding-door-closers" target="_blank" class="button is-big w-inline-block">
+                  <div>View on Kickstarter</div>
+                </a>
+              </div>
+            </div>
+            <div class="loop_group">
+              <div class="loop_text">Be the first</div>
+              <div id="w-node-_35ba80ff-f86e-b6e8-367b-d4b6789527fb-fd9a6b3a" class="loop_button">
+                <a href="#" class="button is-big w-inline-block">
+                  <div>View on Kickstarter</div>
+                </a>
+              </div>
+              <div class="loop_text">Be the first</div>
+              <div id="w-node-_35ba80ff-f86e-b6e8-367b-d4b678952801-fd9a6b3a" class="loop_button">
+                <a href="#" class="button is-big w-inline-block">
+                  <div>View on Kickstarter</div>
+                </a>
+              </div>
+              <div class="loop_text">Be the first</div>
+              <div id="w-node-_35ba80ff-f86e-b6e8-367b-d4b678952807-fd9a6b3a" class="loop_button">
+                <a href="#" class="button is-big w-inline-block">
+                  <div>View on Kickstarter</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section data-w-id="149e49b7-2253-cceb-6350-8db746c2a575" class="section_feature2">
+        <div class="padding-global">
+          <div class="container-xlarge">
+            <div class="feature2_component">
+              <div class="feature2_top"><img src="images/asdasd.svg" loading="lazy" alt="" class="feature2_loop-image">
+                <div class="feature2_loop-icon w-embed"><svg width="100%" height="100%" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.8029 0.757812H11.1969V7.86884L8.53302 1.27561L7.04394 1.87724L9.77679 8.64127L4.61827 3.48275L3.48264 4.61839L8.42685 9.56259L2.01952 6.76318L1.37653 8.23487L8.15623 11.197H0.75769V12.803H8.15622L1.37653 15.7651L2.01952 17.2368L8.42684 14.4374L3.48264 19.3816L4.61827 20.5172L9.77679 15.3587L7.04394 22.1228L8.53302 22.7244L11.1969 16.1312V23.2422H12.8029V16.1312L15.4667 22.7244L16.9558 22.1228L14.223 15.3587L19.3815 20.5172L20.5171 19.3816L15.5729 14.4374L21.9802 17.2368L22.6232 15.7651L15.8436 12.803H23.2421V11.197H15.8435L22.6232 8.23487L21.9802 6.76318L15.5729 9.56259L20.5171 4.61838L19.3815 3.48275L14.223 8.64126L16.9558 1.87724L15.4667 1.27561L12.8029 7.86884V0.757812Z" fill="white"></path>
+                  </svg></div>
+              </div>
+              <div class="feature2_content">
+                <h2 class="heading-style-h2">Designed for Your Home</h2>
+                <div class="max-width-large">
+                  <div class="feature_subtitle is-center">
+                    <div class="feature_subtitle-circle no-margin"></div>
+                    <div class="text-size-large">Affordable, Practical, and Reliable</div>
+                  </div>
+                  <div class="spacer-small"></div>
+                  <div class="text-size-large text-style-muted">Latchline integrates effortlessly into any home, providing a durable and straightforward method to keep screen doors closed. It helps prevent pests from entering and minimizes door wear, offering a simple, budget-friendly solution.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section_loop2">
+        <div class="loop_container">
+          <div class="loop_mover">
+            <div class="loop_group">
+              <div class="loop_text">View on Kickstarter</div>
+              <div id="w-node-_74bc25a9-ae42-7361-f8c8-ac3374e25f21-fd9a6b3a" class="loop_button">
+                <a href="https://www.kickstarter.com/projects/1867636688/latchline-reinventing-sliding-door-closers" target="_blank" class="button is-big w-inline-block">
+                  <div>View on Kickstarter</div>
+                </a>
+              </div>
+              <div class="loop_text">View on Kickstarter</div>
+              <div id="w-node-_74bc25a9-ae42-7361-f8c8-ac3374e25f27-fd9a6b3a" class="loop_button">
+                <a href="https://www.kickstarter.com/projects/1867636688/latchline-reinventing-sliding-door-closers" target="_blank" class="button is-big w-inline-block">
+                  <div>View on Kickstarter</div>
+                </a>
+              </div>
+              <div class="loop_text">View on Kickstarter</div>
+              <div id="w-node-_194b59ec-7f0e-8af2-2e48-f0dd6a418590-fd9a6b3a" class="loop_button">
+                <a href="https://www.kickstarter.com/projects/1867636688/latchline-reinventing-sliding-door-closers" target="_blank" class="button is-big w-inline-block">
+                  <div>View on Kickstarter</div>
+                </a>
+              </div>
+            </div>
+            <div class="loop_group">
+              <div class="loop_text">View on Kickstarter</div>
+              <div id="w-node-cbe3c137-c42a-1876-b903-bb57461ae238-fd9a6b3a" class="loop_button">
+                <a href="#" class="button is-big w-inline-block">
+                  <div>View on Kickstarter</div>
+                </a>
+              </div>
+              <div class="loop_text">View on Kickstarter</div>
+              <div id="w-node-cbe3c137-c42a-1876-b903-bb57461ae23e-fd9a6b3a" class="loop_button">
+                <a href="#" class="button is-big w-inline-block">
+                  <div>View on Kickstarter</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer data-w-id="af73fd55-88e1-7940-e6c2-c2b743f53e92" class="footer">
+      <div class="padding-global">
+        <div class="container-xlarge">
+          <div class="footer_component">
+            <div class="footer_credits">
+              <a href="mailto:INFO@LATCH.LINE" class="footer_link">INFO@LATCH.LINE</a>
+              <a href="https://www.mediastudio.hk/" target="_blank" class="footer_link">DESIGNED BY MEDIA STUDIO</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=675c343d407164d0fd9a6ad1" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="js/webflow.js" type="text/javascript"></script>
+</body>
+</html>
